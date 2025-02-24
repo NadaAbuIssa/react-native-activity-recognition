@@ -4,7 +4,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:7.0.0'
     }
 }
 
@@ -22,15 +22,14 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 26
+        minSdkVersion 16
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
     }
     lintOptions {
         abortOnError false
@@ -38,6 +37,10 @@ android {
 }
 
 dependencies {
-    api 'com.facebook.react:react-native:+'
-    api 'com.google.android.gms:play-services:+'
+    implementation 'com.facebook.react:react-native:+'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:18.1.1'
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+
 }
